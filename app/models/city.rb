@@ -17,4 +17,16 @@ class City
 
     result ? self.new(result) : nil
   end
+
+  def daily_weather
+    openweathermap_client.get_daily_weather
+
+    openweathermap_client.success ? openweathermap_client.data : nil
+  end
+
+  private
+
+  def openweathermap_client
+    @openweathermap_client ||= OpenWeatherMapClient.new(self)
+  end
 end
