@@ -1,0 +1,7 @@
+<h1><%= @city.name%> Weather</h1>
+
+<%= render 'form' %>
+
+<div class="row">
+  <%= render partial: 'city', object: @city %>
+</div>

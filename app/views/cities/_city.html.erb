@@ -1,0 +1,26 @@
+<div class="col-md-4 col-sm-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= city.name %></h3>
+    </div>
+    <div class="panel-body">
+      <h3>
+        <%= image_tag weather_icon(city.daily_weather["weather"][0]["icon"]) %>
+        <%= city.daily_weather["weather"][0]["main"] %><br />
+        <small><%= city.daily_weather["weather"][0]["description"] %></small>
+      </h3>
+      <dl class="dl-horizontal">
+        <dt>Temperature</dt>
+        <dd><%= city.daily_weather["main"]["temp"] %>&deg; C</dd>
+        <dt>Temperature Min</dt>
+        <dd><%= city.daily_weather["main"]["temp_min"] %>&deg; C</dd>
+        <dt>Temperature Max</dt>
+        <dd><%= city.daily_weather["main"]["temp_min"] %>&deg; C</dd>
+        <dt>Pressure</dt>
+        <dd><%= city.daily_weather["main"]["pressure"] %> hPa</dd>
+        <dt>Humidity</dt>
+        <dd><%= city.daily_weather["main"]["humidity"] %>%</dd>
+      </dl>
+    </div>
+  </div>
+</div>
