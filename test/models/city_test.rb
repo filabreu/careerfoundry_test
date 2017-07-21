@@ -27,4 +27,12 @@ class CityTest < ActiveSupport::TestCase
       assert city.is_a?(City)
     end
   end
+
+  def test_find_by_country_and_name
+    city = City.find_by_country_and_name("US", "New York")
+
+    assert city.is_a?(City)
+    assert_equal("US", city.country)
+    assert_equal("New York", city.name)
+  end
 end

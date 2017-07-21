@@ -18,6 +18,14 @@ class City
     result ? self.new(result) : nil
   end
 
+  def self.find_by_country_and_name(country, name)
+    self.city_data.select do |city|
+      city["country"] == country && city["name"] == name
+    end.map do |city|
+      self.new(city)
+    end.first
+  end
+
   def self.random(n)
     self.city_data.sample(n).map do |city|
       self.new(city)
