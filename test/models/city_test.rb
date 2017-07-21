@@ -18,4 +18,13 @@ class CityTest < ActiveSupport::TestCase
     assert city.is_a?(City)
     assert_equal("New York", city.name)
   end
+
+  def test_random
+    cities = City.random(5)
+
+    assert_equal(5, cities.size)
+    cities.each do |city|
+      assert city.is_a?(City)
+    end
+  end
 end

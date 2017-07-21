@@ -18,6 +18,12 @@ class City
     result ? self.new(result) : nil
   end
 
+  def self.random(n)
+    self.city_data.sample(n).map do |city|
+      self.new(city)
+    end
+  end
+
   def daily_weather
     openweathermap_client.get_daily_weather
 
